@@ -39,4 +39,11 @@ public class Rental {
 
         return result;
     }
+
+    public int getFrequentRenterPoints() {
+        if ((_movie.getPriceCode() == Movie.NEW_RELEASE) && _daysRented > 1) {
+            return 2; // bônus para lançamento novo alugado por mais de um dia
+        }
+        return 1; // caso normal, sem bônus
+    }
 }
